@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EaseCare - Psicólogos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+    <div class="container">
+        <a href="index.html" class="logo">EaseCare</a> 
+        <button class="hamburger-menu" aria-label="Abrir Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="psicologos.html">Psicólogos</a></li> 
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li> 
+            </ul>
+            <a href="psicologos.html?showModal=true" class="cta-button" id="headerAgendarButton">Agendar Consulta</a>
+    </div>
+</header>
+
+    <main class="psychologists-page">
+        <div class="container">
+            <h2>Encontre seu Psicólogo</h2>
+
+            <div class="carousel-container">
+                <button class="nav-arrow left-arrow" aria-label="Previous psychologist">
+                    <img src="images/arrow-left.png" alt="Seta para esquerda"> </button>
+                <div class="psychologist-list" id="psychologistList">
+                    <div class="psychologist-card">
+                        <img src="images/estefani_kayser.jpeg" alt="Foto da Dra. Estefani Kayser">
+                        <h3>Dra. Estefani Kayser</h3>
+                        <p>Psicóloga Clínica - Especialista em ansiedade e relacionamentos, oferece escuta empática e acolhimento.</p>
+                        <a href="perfil-estefani.html" class="profile-button">Perfil Completo</a>
+                    </div>
+
+                    <div class="psychologist-card">
+                        <img src="images/henrique_appelt.jpeg" alt="Foto do Dr. Henrique Appelt">
+                        <h3>Dr. Henrique Appelt</h3>
+                        <p>Psicólogo Infantil e Familiar - Atende crianças e famílias com abordagem lúdica e humanizada, promovendo o desenvolvimento emocional desde a infância.</p>
+                        <a href="perfil-henrique.html" class="profile-button">Perfil Completo</a>
+                    </div>
+
+                    <div class="psychologist-card">
+                        <img src="images/ivan_nascimento.jpeg" alt="Foto do Dr. Ivan do Nascimento">
+                        <h3>Dr. Ivan do Nascimento</h3>
+                        <p>Psicólogo Comportamental - Atuação focada em terapia cognitivo-comportamental, dificuldades emocionais e transtornos do humor.</p>
+                        <a href="perfil-ivan.html" class="profile-button">Perfil Completo</a>
+                    </div>
+
+                    <div class="psychologist-card soon">
+                        <img src="images/em-breve-generica.jpg" alt="Foto de placeholder 'Em Breve'"> <h3>Em Breve</h3>
+                        <p>Novos profissionais incríveis em breve para expandir ainda mais suas opções de atendimento.</p>
+                        <button class="profile-button disabled" disabled>Saiba Mais</button>
+                    </div>
+
+                    <div class="psychologist-card soon">
+                        <img src="images/em-breve-generica.jpg" alt="Foto de placeholder 'Em Breve'">
+                        <h3>Em Breve</h3>
+                        <p>Estamos trabalhando para trazer os melhores especialistas para você.</p>
+                        <button class="profile-button disabled" disabled>Saiba Mais</button>
+                    </div>
+
+                    <div class="psychologist-card soon">
+                        <img src="images/em-breve-generica.jpg" alt="Foto de placeholder 'Em Breve'">
+                        <h3>Em Breve</h3>
+                        <p>Fique atento(a)! Em breve, mais opções de atendimento online.</p>
+                        <button class="profile-button disabled" disabled>Saiba Mais</button>
+                    </div>
+                </div>
+                <button class="nav-arrow right-arrow" aria-label="Next psychologist">
+                    <img src="images/arrow-right.png" alt="Seta para direita"> </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer footer-simple"> <div class="container">
+        <p>&copy; 2025 EaseCare. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+
+<div id="selectPsychologistModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3>Para Agendar uma Consulta</h3>
+        <p>Por favor, selecione um psicólogo da lista abaixo para prosseguir com o agendamento.</p>
+        <button class="modal-understood-button">Entendi</button>
+    </div>
+</div>
+</body>
+</html>

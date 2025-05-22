@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EaseCare - Agendar Consulta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+    <div class="container">
+        <a href="index.html" class="logo">EaseCare</a> 
+        <button class="hamburger-menu" aria-label="Abrir Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="psicologos.html">Psicólogos</a></li> 
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li> 
+            </ul>
+            <a href="psicologos.html?showModal=true" class="cta-button" id="headerAgendarButton">Agendar Consulta</a> 
+        </nav>
+    </div>
+</header>
+
+    <main class="schedule-page">
+        <div class="container">
+            <h2>Agendar Consulta</h2>
+            <form class="schedule-form">
+                <div class="form-row">
+                    <input type="text" placeholder="Nome" class="form-input">
+                    <input type="email" placeholder="E-mail" class="form-input">
+                    <input type="tel" placeholder="Telefone" class="form-input">
+                </div>
+                <div class="form-row">
+                    <input type="text" placeholder="CRP" class="form-input">
+                    <input type="date" placeholder="Data" class="form-input">
+                    <input type="time" placeholder="Horário" class="form-input">
+                </div>
+                <div class="form-row-full">
+                    <textarea placeholder="Mensagem(Opcional)" class="form-textarea"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Agendar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-section about-us-footer">
+                <h3>Sobre Nós</h3>
+                <p>Conectamos profissionais e pacientes, facilitando a assistência em saúde mental mas auxiliares quebrando barreiras geográficas e financeiras.</p>
+            </div>
+            <div class="footer-section contact-info-footer">
+                <h3>Contato</h3>
+                <p>Localização: 950 Cristo Rei, São Leopoldo</p>
+                <p>Email: easecare@gmail.com</p>
+                <p>Telefone: +55 51 99999-9999</p>
+            </div>
+            <div class="footer-section hours">
+                <h3>Horários</h3>
+                <p>Segunda - Sexta: 9:00 AM - 6:00 PM</p>
+                <p>Sábado: 10:00 AM - 5:00 PM</p>
+                <p>Domingo: Fechado</p>
+            </div>
+        </div>
+        <div class="container footer-copyright">
+            <p>&copy; 2025 EaseCare. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

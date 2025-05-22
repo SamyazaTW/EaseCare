@@ -1,0 +1,1029 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    background-color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6a0dad;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-links ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links ul li {
+    margin-left: 30px;
+}
+
+.navbar .nav-links ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links ul li a:hover {
+    color: #6a0dad;
+}
+
+.navbar .cta-button {
+    background-color: #6a0dad;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.navbar .cta-button:hover {
+    background-color: #530a84;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #6a0dad;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+.hero-section {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/alphaimageindexpage.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+    z-index: -1;
+}
+
+.hero-content {
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.hero-content p strong {
+    color: #b16aff;
+}
+
+.primary-button {
+    background-color: white;
+    color: #6a0dad;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.primary-button:hover {
+    background-color: #e0e0e0;
+    color: #530a84;
+}
+
+.psychologists-page {
+    flex-grow: 1;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.psychologists-page h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.psychologist-list {
+    display: flex;
+    gap: var(--card-gap);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    width: calc(3 * var(--card-width) + 2 * var(--card-gap));
+}
+
+:root {
+    --card-width: 300px;
+    --card-gap: 20px;
+}
+
+.psychologist-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    min-width: var(--card-width);
+    max-width: var(--card-width);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 420px;
+    flex-shrink: 0;
+}
+
+.psychologist-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px auto;
+    border: 3px solid #eee;
+}
+
+.psychologist-card.soon {
+    background-color: #f0f0f0;
+    color: #777;
+    border: 1px dashed #ccc;
+}
+
+.psychologist-card.soon img {
+    filter: grayscale(80%);
+    opacity: 0.7;
+}
+
+.psychologist-card.soon h3 {
+    color: #999;
+}
+
+.psychologist-card .profile-button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.psychologist-card h3 {
+    font-size: 20px;
+    color: #6a0dad;
+    margin-bottom: 10px;
+}
+
+.psychologist-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.profile-button {
+    display: inline-block;
+    background-color: #6a0dad;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+}
+
+.profile-button:hover {
+    background-color: #530a84;
+}
+
+.nav-arrow img {
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+.nav-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 15px;
+    transition: transform 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-arrow:hover {
+    transform: scale(1.1);
+}
+
+.nav-arrow[disabled] {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.contact-page {
+    flex-grow: 1;
+    padding: 50px 0;
+    background-color: white;
+}
+
+.contact-page h2 {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fcfcfc;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: left;
+    padding: 10px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #555;
+}
+
+.info-item .icon {
+    font-size: 24px;
+    color: #6a0dad;
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+}
+
+.contact-map {
+    flex: 1;
+    min-width: 400px;
+    max-width: 500px;
+}
+
+.contact-map img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.profile-page {
+    flex-grow: 1;
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+.profile-page h2 {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-card-large {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.profile-card-large img {
+    width: 250px;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+.profile-details {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.profile-details h3 {
+    font-size: 28px;
+    color: #6a0dad;
+    margin-bottom: 10px;
+}
+
+.profile-details .price-crp {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.profile-details .description {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.agenda-button {
+    background-color: #6a0dad;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.agenda-button:hover {
+    background-color: #530a84;
+}
+
+.about-us-page {
+    flex-grow: 1;
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+.about-us-page h2 {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-us-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 40px;
+}
+
+.about-us-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: center;
+}
+
+.about-us-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.about-us-text {
+    flex: 2;
+    min-width: 350px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.about-us-text p {
+    margin-bottom: 15px;
+}
+
+.about-us-text p strong {
+    color: #6a0dad;
+}
+
+.schedule-page {
+    flex-grow: 1;
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+.schedule-page h2 {
+    font-size: 36px;
+    color: #6a0dad;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.schedule-form {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 15px;
+    border: 1px solid #a891b8;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: #888;
+}
+
+.form-input:focus {
+    border-color: #6a0dad;
+    box-shadow: 0 0 0 3px rgba(106, 13, 205, 0.2);
+}
+
+.form-row-full {
+    width: 100%;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #a891b8;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    resize: vertical;
+    min-height: 120px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-textarea::placeholder {
+    color: #888;
+}
+
+.form-textarea:focus {
+    border-color: #6a0dad;
+    box-shadow: 0 0 0 3px rgba(106, 13, 205, 0.2);
+}
+
+.submit-button {
+    background-color: #6a0dad;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    max-width: 200px;
+}
+
+.submit-button:hover {
+    background-color: #530a84;
+}
+
+.footer:not(.footer-simple) {
+    background-color: #a891b8;
+    color: rgba(255, 255, 255, 0.9);
+    padding-top: 40px;
+    font-size: 14px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer:not(.footer-simple) .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer:not(.footer-simple) .footer-section {
+    text-align: center;
+}
+
+.footer:not(.footer-simple) .footer-section h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer:not(.footer-simple) .footer-section p {
+    margin-bottom: 8px;
+}
+
+.footer:not(.footer-simple) .footer-copyright {
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+}
+
+.footer-simple {
+    background-color: #a891b8;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer-simple .container p {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 999;
+    }
+
+    .navbar .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .navbar .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar .nav-links ul li {
+        margin: 0;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .navbar .nav-links ul li:last-child {
+        border-bottom: none;
+    }
+
+    .navbar .nav-links ul li a {
+        padding: 10px 20px;
+        display: block;
+    }
+
+    .navbar .cta-button {
+        display: block;
+        margin: 20px auto 0 auto;
+        width: calc(100% - 40px);
+        max-width: 250px;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .primary-button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+
+    .psychologists-page h2,
+    .contact-page h2,
+    .profile-page h2,
+    .about-us-page h2,
+    .schedule-page h2 {
+        font-size: 28px;
+    }
+
+    .carousel-container {
+        width: var(--card-width);
+        max-width: 100%;
+    }
+
+    .psychologist-card {
+        min-width: var(--card-width);
+        max-width: var(--card-width);
+    }
+
+    .psychologist-list {
+        padding: 0;
+        gap: var(--card-gap);
+    }
+
+    .nav-arrow img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .footer:not(.footer-simple) .footer-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .footer:not(.footer-simple) .footer-section {
+        padding: 15px 0;
+    }
+
+    .footer-simple {
+        padding: 15px 0;
+    }
+
+    .profile-card-large {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .profile-card-large img {
+        width: 180px;
+        height: auto;
+    }
+
+    .profile-details {
+        text-align: center;
+    }
+
+    .profile-details h3 {
+        font-size: 24px;
+    }
+
+    .profile-details .price-crp {
+        font-size: 14px;
+    }
+
+    .profile-details .description {
+        font-size: 14px;
+    }
+
+    .agenda-button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+
+    .about-us-content {
+        padding: 20px;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-us-image img {
+        width: 80%;
+    }
+
+    .about-us-text {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .contact-content {
+        padding: 20px;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-info {
+        text-align: center;
+        align-items: center;
+    }
+
+    .contact-map {
+        min-width: unset;
+        max-width: 100%;
+    }
+
+    .schedule-form {
+        padding: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-input {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .form-textarea {
+        min-height: 80px;
+    }
+
+    .submit-button {
+        padding: 12px 25px;
+        font-size: 16px;
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .logo {
+        font-size: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .psychologist-card {
+        padding: 15px;
+    }
+
+    .psychologist-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .info-item {
+        font-size: 16px;
+    }
+
+    .info-item .icon {
+        font-size: 20px;
+    }
+
+    .profile-card-large img {
+        width: 120px;
+        height: auto;
+    }
+
+    .about-us-image img {
+        width: 100%;
+    }
+
+    .about-us-text {
+        font-size: 14px;
+    }
+
+    .form-input,
+    .form-textarea {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .submit-button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+    .modal-content h3 {
+        font-size: 20px;
+    }
+    .modal-content p {
+        font-size: 14px;
+    }
+    .modal-understood-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-content h3 {
+    color: #6a0dad;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.modal-content .close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-content .close-button:hover,
+.modal-content .close-button:focus {
+    color: #333;
+}
+
+.modal-understood-button {
+    background-color: #6a0dad;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-understood-button:hover {
+    background-color: #530a84;
+}
