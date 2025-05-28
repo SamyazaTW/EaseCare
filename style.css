@@ -1027,3 +1027,8 @@ body {
 .modal-understood-button:hover {
     background-color: #530a84;
 }
+
+#map {
+    height: 400px;
+    width: 100%;
+}

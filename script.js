@@ -1,3 +1,16 @@
+function initMap() {
+    const easeCareLocation = { lat: -29.62110273855006, lng: -51.165660329110075 }; 
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15, 
+        center: easeCareLocation, 
+    });
+    const marker = new google.maps.Marker({
+        position: easeCareLocation,
+        map: map,
+        title: "EaseCare - Seu Centro de Apoio",
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
